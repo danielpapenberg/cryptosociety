@@ -21,7 +21,7 @@ export default function Moon() {
 
         var folder = '/images/3D/Moon/';
         if (isMobile) {
-            var folder = '/images/3D/Moon-M/';
+            var folder = '/images/3D/Moon-M2X/';
         }
 
         var frameCount  = 100;
