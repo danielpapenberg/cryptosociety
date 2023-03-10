@@ -1,4 +1,4 @@
-export default function signals({ user }) {q
+export default function signals({ user }) {
     return (
         <>
             <Navigation user={user} />
@@ -20,5 +20,3 @@ export async function getServerSideProps(context) {
         props: { user: session.user},
     };
 }
-
-w
