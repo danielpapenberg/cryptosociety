@@ -19,14 +19,17 @@ export default function Moon() {
         const images = [];
         let moon = { frame: 0 };
 
-        if (isMobile !== true) {
-            var frameCount  = 100;
-            const currentFrame = (index) => `/images/3D/Moon/${(index + 1).toString().padStart(4, '0')}.jpg`;
-            for (let i = 0; i < frameCount; i++) {
-                const img = new Image();
-                img.src = currentFrame(i);
-                images.push(img);
-            }
+        var folder = '/images/3D/Moon/';
+        if (isMobile) {
+            var folder = '/images/3D/Moon-M/';
+        }
+
+        var frameCount  = 100;
+        const currentFrame = (index) => `${folder}${(index + 1).toString().padStart(4, '0')}.jpg`;
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            images.push(img);
         }
 
         const windowHeight = window.innerHeight;
@@ -112,14 +115,9 @@ export default function Moon() {
         });
 
 
-        if (isMobile !== true) {
-            images[0].onload = render;
-        }
+        images[0].onload = render;
 
         function render() {
-            if (isMobile) {
-                return
-            }
             context.canvas.width = images[0].width;
             context.canvas.height = images[0].height;
             context.clearRect(0, 0, moonCanvas.width, moonCanvas.height);
@@ -131,17 +129,17 @@ export default function Moon() {
 
     return (
         <div className="min-h-screen overflow-hidden">
-            <canvas className="moonCanvas overflow-hidden h-screen invisible md:visible md:h-auto md:w-screen aspect-[1920/1080]"></canvas>
+            <canvas className="moonCanvas overflow-hidden h-screen lg:h-auto lg:w-screen aspect-[360/640] lg:aspect-[1920/1080]"></canvas>
 
             <div className="social z-10 fixed top-[30%] md:top-[40%] left-[5%] md:w-2/3 pr-5">
-                <h2 className="text-6xl md:text-9xl mb-5 text-white-300 tracking-wide font-bold text-blue-300">JOIN US</h2>
-                <div className="flex gap-10">
+                <h2 className="text-7xl md:text-9xl mb-5 text-white-300 tracking-wide font-bold text-blue-300">JOIN US</h2>
+                <div className="flex flex-col md:flex-row gap-5 md:gap-10">
                     <PrimaryButton onClick={() => { window.open('https://t.me/cryptosocietyy') }} type="dark">TELEGRAM <FaTelegramPlane /></PrimaryButton>
                     <PrimaryButton onClick={() => { window.open('https://twitter.com/cryptosocietytg') }} type="dark">TWITTER <FaTwitter /></PrimaryButton>
                 </div>
-                <div class="scroll-down">
-                    <div class="mousey">
-                        <div class="scroller"></div>
+                <div className="scroll-down">
+                    <div className="mousey">
+                        <div className="scroller"></div>
                     </div>
                 </div>
             </div>
