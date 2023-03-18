@@ -38,8 +38,8 @@ function Amas() {
                             const { id, title, desc, image, link, date, hot } = item;
                             if (!hot) return;
                             return (
-                                <a key={id} href={link} target='_blank' className="flex content-center justify-center h-[100px] md:h-[150px] m-2 shrink-0">
-                                    <img src={image} className="w-66 md:w-100 rounded shrink-0" alt={title}/>
+                                <a key={id} href={link} target='_blank' className="flex content-center justify-center h-[100px] md:h-[150px] m-2">
+                                    <img src={image} className="h-[100px] md:h-[150px] rounded" alt={title}/>
                                 </a>
                             )
                         })}
