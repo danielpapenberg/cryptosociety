@@ -11,6 +11,12 @@ html {
     overflow-x: hidden;
 }
 
+@media only screen and (min-width: 768px) {
+    .custom-writing-mode {
+        writing-mode: vertical-rl;
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
