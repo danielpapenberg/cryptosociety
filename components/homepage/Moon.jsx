@@ -146,7 +146,7 @@ export default function Moon() {
                 </div>
             </div>
 
-            <h2 className="introText fixed text-4xl md:text-[24px] left-[5%] top-[30%] md:top-[40%] md:w-1/2 opacity-0 pr-5 select-none">
+            <h2 className="introText fixed text-2xl md:text-[24px] left-[5%] top-[30%] md:top-[40%] md:w-1/2 opacity-0 pr-5 select-none">
                 Crypto Society is a group of enthusiasts set up <strong className="text-blue-300">by the people for the people</strong>.<br />
                 We aim to inform on all matters crypto by sharing our research to passionate members
                 who are encouraged to <strong className="text-blue-300">learn and share</strong> themselves.
